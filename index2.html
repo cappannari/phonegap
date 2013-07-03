@@ -1,7 +1,39 @@
 <doctype html>
 <html>
+<head>
+    <title>Compass Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        navigator.compass.getCurrentHeading(onSuccess, onError);
+    }
+
+    // onSuccess: Get the current heading
+    //
+    function onSuccess(heading) {
+        alert('Heading: ' + heading.magneticHeading);
+    }
+
+    // onError: Failed to get the heading
+    //
+    function onError(compassError) {
+        alert('Compass Error: ' + compassError.code);
+    }
+
+    </script>
+  </head>
 <body>
 this is index2
-<a href=index1.html>Back to index1</a>
+<a href=index.html>Back to index1</a>
+<hr>
+
 </body>
 </html>
