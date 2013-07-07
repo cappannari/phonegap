@@ -10,7 +10,7 @@ This is Dan's test app version 3<br />
 <script>
 function doajax() {
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET","invoicehelper.asp?t=" + data,false);
+	xmlhttp.open("GET","http://www.cookevegas.com/ajax/ajax.php?t=c", false);
 	xmlhttp.send();
 	htmlresponse = xmlhttp.responseText.split("|");
 	for (i=0; i<htmlresponse.length; i++) {
