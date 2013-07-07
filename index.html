@@ -9,6 +9,12 @@ This is Dan's test app version 3<br />
 </html>
 <script>
 function doajax() {
-	alert("We are in doajax");
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET","invoicehelper.asp?t=" + data,false);
+	xmlhttp.send();
+	htmlresponse = xmlhttp.responseText.split("|");
+	for (i=0; i<htmlresponse.length; i++) {
+		alert("djc:" + htmlresponse[i]);
+	}
 }
 </script>
