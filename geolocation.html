@@ -13,12 +13,14 @@
     // device APIs are available
     //
     function onDeviceReady() {
+    	alert("Ready called");
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }
 
     // onSuccess Geolocation
     //
     function onSuccess(position) {
+		alert("Success called");
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -33,6 +35,7 @@
     // onError Callback receives a PositionError object
     //
     function onError(error) {
+		alert("failure called");
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
