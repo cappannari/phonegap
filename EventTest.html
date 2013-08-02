@@ -1,0 +1,22 @@
+<doctype html>
+<html>
+<body>
+<div id="content"></div>
+</body>
+</html>
+<script>
+var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET","http://www.cookevegas.com/ajax/ajax.php?t=e&c=4", false);
+	xmlhttp.send();
+	htmlresponse = xmlhttp.responseText.split("|");
+//alert("hr=" + htmlresponse);
+	html = "";
+	for (i=0; i<htmlresponse.length; i++) {
+		event = htmlresponse[i];
+		eventDetails = event.split("~");
+		EventDescription = eventDetails[0] + " from " + eventDetails[1] + " to " + eventDetails[2];
+		html += '<div>' + EventDescription + "</div><br>";
+	}
+	var div = document.getElementById("content");
+	div.innerHTML = html;
+</script>

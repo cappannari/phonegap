@@ -1,0 +1,14 @@
+<doctype html>
+<html>
+<body>
+<div id="content"></div>
+</body>
+</html>
+<script>
+var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET","http://www.cookevegas.com/ajax/ajax.php?t=f&c=4", false);
+	xmlhttp.send();
+	htmlresponse = xmlhttp.responseText;
+	var div = document.getElementById("content");
+	div.innerHTML = htmlresponse;
+</script>
